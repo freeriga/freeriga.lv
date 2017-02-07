@@ -1,7 +1,14 @@
 <!doctype html>
 <meta charset=utf-8>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel=stylesheet href=index.css>
 <title>Free Riga</title>
+
+<div id=bg>
+<div id=cold></div>
+<div id=hot></div>
+</div>
+
 <main>
 <img src=freeriga.jpg style="height: 4.5rem; width: 4.5rem">
 
@@ -16,4 +23,23 @@
 <a href=mailto:info@freeriga.lv>info@freeriga.lv</a> 26012582
 </p>
 
-<div style="clear: both">
+<div style="clear: both"></div>
+
+<script>
+// preload backgrounds
+var xs = ["good-1.jpg", "good-2.jpg", "good-3.jpg", "good-4.jpg"]
+xs.forEach(function(x) {
+  (new Image()).src = "pix/big/" + x
+})
+
+var i = 1
+
+setInterval(function() {
+  var hot = document.getElementById("hot")
+  var cold = document.getElementById("cold")
+  cold.style["background-image"] = "url(pix/big/good-" + (i + 1) + ".jpg)"
+  cold.id = "hot"
+  hot.id = "cold"
+  i = (i + 1) % xs.length
+}, 5000)
+</script>

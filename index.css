@@ -1,11 +1,17 @@
 html, body { margin: 0; }
-html { font: 20px/1.4 Rubik; }
-body { background: url(bg1.jpg) no-repeat center center fixed; }
-body { background-size: cover; }
+html { font: 14px/1.4 Rubik; }
+
+#bg, #bg div { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+#bg div { background: url(pix/big/good-1.jpg) no-repeat center center fixed; }
+#bg div { background-size: cover; }
+#bg div { transition: 3s ease opacity; }
+#bg #hot { opacity: 1; }
+#bg #cold { opacity: 0; }
+
 main { transform: rotateZ(-3deg); }
 main { color: black; border: 0px solid rgba(0, 0, 0, 0.9); border-radius: 1rem; }
 main { background-color: white;; }
-main { max-width: 20em; margin: 13rem auto; padding: 1rem; }
+main { max-width: 20em; margin: 4rem 2rem; padding: 1rem; }
 a { color: inherit; border-bottom: 1px solid currentcolor; text-decoration: none; }
 img { border-radius: 50%; float: left; margin: 0 1rem 0 0; }
 .bold { font-weight: bold; }
@@ -30,4 +36,9 @@ p:not(:first-of-type) { text-align: center; }
   font-family: "Rubik";
   font-weight: bold;
   src: url("font/Rubik-Bold.ttf");
+}
+
+@media (min-width: 800px) {
+  main { margin: 4rem; }
+  html { font-size: 20px; }
 }
